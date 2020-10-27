@@ -1,9 +1,10 @@
 package breaker_test
 
 import (
-	"breaker"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/francisco-alejandro/breaker"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestCircuitError_Error(t *testing.T) {

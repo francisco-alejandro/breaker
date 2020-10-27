@@ -1,12 +1,13 @@
 package breaker_test
 
 import (
-	"breaker"
-	"github.com/benbjohnson/clock"
-	"github.com/pkg/errors"
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
+
+	"github.com/benbjohnson/clock"
+	"github.com/francisco-alejandro/breaker"
+	"github.com/pkg/errors"
+	"github.com/stretchr/testify/assert"
 )
 
 type storageMock struct {
