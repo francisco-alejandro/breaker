@@ -1,16 +1,19 @@
 package breaker_test
 
 import (
-	"breaker"
-	"github.com/stretchr/testify/assert"
 	"testing"
+	"time"
+
+	"github.com/francisco-alejandro/breaker"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestBreaker_Ready(t *testing.T) {
 	storageService := breaker.NewMemoryStorage()
 
 	options := breaker.Options{
-		MaxFailures: 1,
+		MaxFailures:       1,
+		OpenStateDuration: time.Second * 1,
 	}
 
 	b, err := breaker.New(storageService, &options)

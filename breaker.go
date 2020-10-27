@@ -27,7 +27,7 @@ type Breaker struct {
 }
 
 // New implements Breaker factory
-func New(storageService Storage, options *Options) (Breaker, error) {
+func New(storageService Storage, options *Options) (*Breaker, error) {
 	maxFailures := defaultMaxFailures
 	openStateDuration := defaultOpenStateDuration
 
@@ -43,7 +43,7 @@ func New(storageService Storage, options *Options) (Breaker, error) {
 
 	currentState, err := storageService.GetCurrentState()
 
-	return Breaker{
+	return &Breaker{
 		State:             currentState,
 		storageService:    storageService,
 		maxFailures:       maxFailures,

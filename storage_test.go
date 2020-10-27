@@ -1,11 +1,12 @@
 package breaker_test
 
 import (
-	"breaker"
 	"errors"
 	"fmt"
 	"testing"
 	"time"
+
+	"github.com/francisco-alejandro/breaker"
 
 	"github.com/alicebob/miniredis/v2"
 	"github.com/benbjohnson/clock"
