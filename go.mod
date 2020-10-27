@@ -1,4 +1,4 @@
-module breaker
+module github.com/francisco-alejandro/breaker
 
 go 1.14
 
