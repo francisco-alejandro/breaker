@@ -31,9 +31,7 @@ func init() {
 // Get wraps http.Get in CircuitBreaker.
 func Get(url string) ([]byte, error) {
 	err := cb.Ready()
-
-	switch err {
-	case breaker.OpenCircuitError:
+	if err == breaker.OpenCircuitError {
 		return nil, err
 	}
 
